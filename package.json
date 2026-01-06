@@ -1,0 +1,23 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "启动本地服务 localhost:3000",
+  "main": "index.js",
+  "scripts": {
+	"serve": "serve",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AZQD/server.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AZQD/server/issues"
+  },
+  "homepage": "https://github.com/AZQD/server#readme",
+  "dependencies": {
+    "serve": "^14.2.5"
+  }
+}
