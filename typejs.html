@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Typed.js 示例</title>
+	<style>
+	#typed-output {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 30px;
+    color: #FF5733;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+	</style>
+<script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <style>
+        /* 简单的样式，使输出文本更醒目 */
+        #typed-output {
+            font-size: 24px;
+            font-weight: bold;
+            color: #3498db;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>模拟动态的文本输入效果动画：Typed.js</h1>
+    <div id="typed-output"></div>
+
+    <script>
+	
+	// 模拟动态的文本输入效果动画：Typed.js
+	// 参考文档：
+	// https://github.com/mattboldt/typed.js
+	// https://juejin.cn/post/7428632158443995174
+        const options = {
+            strings: ["欢迎来到我的网站！", "这里有很多有趣的内容。", "希望你喜欢！"],
+            typeSpeed: 50,
+            backSpeed: 25,
+            backDelay: 1000,
+            startDelay: 500,
+            //loop: true,
+            showCursor: true,
+            cursorChar: "|"
+        };
+
+        const typed = new Typed("#typed-output", options);
+    </script>
+</body>
+</html>
