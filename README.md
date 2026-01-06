@@ -19,4 +19,6 @@ npm run serve
 
 ### pdfjs
 
-	pdf文件预览
+	pdfjs-4.4.168-dist （方式一）
+	PDF高亮标注导航.html （方式二）
+	
