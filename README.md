@@ -20,5 +20,7 @@ npm run serve
 ### pdfjs
 
 	pdfjs-4.4.168-dist （方式一）
+	    打开默认pdf：http://localhost:3000/pdfjs/pdfjs-4.4.168-dist/web/viewer
+	    打开指定pdf：http://localhost:3000/pdfjs/pdfjs-4.4.168-dist/web/viewer?file=test.pdf
+	    （跳转到指定页码并高亮）
 	PDF高亮标注导航.html （方式二）
-	

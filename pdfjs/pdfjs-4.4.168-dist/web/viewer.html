@@ -504,5 +504,75 @@ See https://github.com/adobe-type-tools/cmap-resources
 
     </div> <!-- outerContainer -->
     <div id="printContainer"></div>
+    <div style="position: absolute; left: 0; top: 50px;">
+      <button onclick="jumpFun(1)">风险点1</button>
+      <button onclick="jumpFun(2)">风险点2</button>
+      <button onclick="jumpFun(3)">风险点3</button>
+    </div>
   </body>
+  <script type="text/javascript">
+
+
+    setTimeout(() => {
+      let pagesContainer = document.getElementsByClassName('page') // 父级容器
+
+      insertChildDomFun(pagesContainer, {
+        pageNum: 1,
+        box: {left: 70, top: 467, width: 326, height: 223},
+        text: '风险点1'
+      })
+
+      insertChildDomFun(pagesContainer, {
+        pageNum: 2,
+        box: {left: 70, top: 216, width: 672, height: 303},
+        text: '风险点2'
+      })
+
+      insertChildDomFun(pagesContainer, {
+        pageNum: 3,
+        box: {left: 70, top: 272, width: 675, height: 75},
+        text: '风险点3'
+      })
+    }, 1000)
+
+    // 跳转到指定页码并高亮
+    function jumpFun (pageNum) {
+      let pagesContainer = document.getElementsByClassName('page') // 父级容器
+      PDFViewerApplication.page = pageNum // 跳转到指定页码
+      pagesContainer[pageNum - 1].querySelector('.newChild').style.display = 'block'
+    }
+
+    // 添加高亮样式和文字
+    function insertChildDomFun (pagesContainer, params={}) {
+
+      // 添加高亮样式
+      let newChild = document.createElement('div');
+      newChild.setAttribute('class', 'newChild')
+      newChild.textContent = '';
+      newChild.style.position = 'absolute'
+      newChild.style.left = params.box.left + 'px'
+      newChild.style.top = params.box.top + 'px'
+      newChild.style.width = params.box.width + 'px'
+      newChild.style.height = params.box.height + 'px'
+      newChild.style.color = 'yellow'
+      newChild.style.backgroundColor = 'rgba(243,62,62,.1)'
+      pagesContainer[params.pageNum - 1].appendChild(newChild);
+
+      // 添加高亮文字
+      let spanText = document.createElement('span');
+      spanText.textContent = params.text;
+      spanText.style.position = 'absolute'
+      spanText.style.left = '-58px'
+      spanText.style.top = '0px'
+      spanText.style.color = '#fff'
+      spanText.style.backgroundColor = '#f33e3e'
+      spanText.style.padding = '0 8px'
+      spanText.style.fontSize = '12px'
+      newChild.appendChild(spanText);
+
+      // 隐藏元素
+      newChild.style.display = 'none'
+    }
+
+  </script>
 </html>
